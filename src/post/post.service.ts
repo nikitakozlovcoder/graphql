@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import CreatePostDto from './dto/createPost.dto';
 import { PostEntity } from './entities/post.entity';
+import { UserEntity } from '../user/entities/user.entity';
 
 @Injectable()
 export class PostService {
@@ -18,11 +19,12 @@ export class PostService {
     private readonly postRepository: Repository<PostEntity>,
   ) {}
 
-  create(createPostDto: CreatePostDto): Promise<PostEntity> {
+  create(createPostDto: CreatePostDto, createdBy: UserEntity): Promise<PostEntity> {
     return this.postRepository.save(
       new PostEntity({
         title: createPostDto.title,
         body: createPostDto.body,
+        createdBy: createdBy
       }),
     );
   }
@@ -31,6 +33,7 @@ export class PostService {
     return this.postRepository.find({
       relations: {
         comments: true,
+        createdBy: true
       },
     });
   }

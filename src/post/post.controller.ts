@@ -20,7 +20,7 @@ export class PostController extends BaseAuthController {
 
     @Post()
     create(@Body() createPostDto: CreatePostDto): Promise<PostEntity> {
-        return this.postService.create(createPostDto);
+        return this.postService.create(createPostDto, super.getUser());
     }
 
     @Get()

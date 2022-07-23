@@ -8,7 +8,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
-import { ConfigEnum } from './config.enum';
+import { ConfigEnum } from './infrastructure/config.enum';
 
 @Module({
   imports: [

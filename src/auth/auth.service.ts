@@ -6,7 +6,7 @@ import {ConfigService} from "@nestjs/config";
 import {TokenPayloadDto} from "./dto/token-payload.dto";
 import {UserEntity} from "../user/entities/user.entity";
 import {UserService} from "../user/user.service";
-import { ConfigEnum } from '../config.enum';
+import { ConfigEnum } from '../infrastructure/config.enum';
 
 @Injectable()
 export class AuthService {
