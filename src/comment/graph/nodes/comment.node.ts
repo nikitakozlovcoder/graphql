@@ -1,6 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 
-
 @ObjectType()
 export class CommentNode{
     @Field(() => Int)
@@ -8,5 +7,4 @@ export class CommentNode{
 
     @Field(() => String)
     body: string;
-
 }
