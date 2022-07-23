@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CommentNode {
+  id: Int!
+  body: String!
+}
+
+type PostNode {
+  id: Int!
+  title: String!
+  body: String!
+  comments: [CommentNode!]!
+}
+
+type Query {
+  post(id: Int!): PostNode!
+  comment(id: Int!): CommentNode!
+}
